@@ -1,0 +1,18 @@
+/** 
+    useBuiltIns : usage - babelrc에 지정된 경우 webpack.config.js 항목 배열이나 소스에 @ babel / polyfill을 포함하지 마십시오. @ babel / polyfill은 여전히 설치해야합니다.
+    useBuiltIns : entry - babelrc에 지정된 경우 require 또는 import를 통해 애플리케이션의 entry 맨 위에 @ babel / polyfill을 포함합니다.
+    useBuiltIns : 키가 지정되지 않았거나 .babelrc에서 useBuiltIns : false로 명시 적으로 설정된 경우 @ babel / polyfill을 webpack.config.js의 항목 배열에 직접 추가하십시오.
+*/
+{
+	"presets" : [
+		["@babel/env", {
+			"useBuiltIns" : "usage",
+            "corejs": 3,
+            "targets": {
+                "ie": "8"
+            },
+            "debug": true
+        }]        
+    ]
+    
+}
